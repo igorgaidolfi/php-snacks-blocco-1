@@ -74,9 +74,9 @@
     </head>
     <body>
         <div>
-        <?php foreach( $posts as $post){
+        <?php foreach( $posts as $key => $post){
                 ?>
-                <h3><?php echo key($posts);?></h3>
+                <h3><?php echo $key;?></h3>
                 <?php foreach( $post as $single_post){
                     ?>
                         <h4><?php echo $single_post["title"];?></h4>
