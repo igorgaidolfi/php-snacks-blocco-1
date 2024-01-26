@@ -1,10 +1,13 @@
 <?php
-    $name = isset($_GET["name"]);
-    $mail = isset($_GET["mail"]);
-    $age = isset($_GET["age"]);
-
-    if(strlen($name)>=3 && preg_match("/.@/",$mail) && is_numeric($age)){
-        $flag = true;
+    if(isset($_GET["name"]) && isset($_GET["mail"]) && isset($_GET["age"])){
+        $name = $_GET['name'];
+        $mail = $_GET['mail'];
+        $age = $_GET['age'];
+        if(strlen($name)>=3 && preg_match("/.@/",$mail) && is_numeric($age)){
+            echo 'Accesso riuscito :)';
+        }else{
+            echo 'Accesso negato!!';
+        }
     }
 ?>
 
@@ -23,13 +26,4 @@
             <button type="submit">Invia</button>
         </form>
     </body>
-    <div>
-        <?php
-            if($flag){
-                echo 'Accesso riuscito :)';
-            }else{
-                echo 'Accesso negato!!';
-            }
-        ?>
-    </div>
 </html>
